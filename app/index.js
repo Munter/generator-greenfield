@@ -44,7 +44,9 @@ WebappAssetgraphGenerator.prototype.gruntfile = function gruntfile() {
 
 WebappAssetgraphGenerator.prototype.app = function app() {
   this.mkdir('app');
-  this.mkdir('app/templates');
+  this.mkdir('app/styles');
+  this.mkdir('app/scripts');
+  this.mkdir('app/images');
 
   this.copy('_package.json', 'package.json');
   this.copy('_bower.json', 'bower.json');
@@ -53,4 +55,5 @@ WebappAssetgraphGenerator.prototype.app = function app() {
 WebappAssetgraphGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
+  this.copy('gitignore', '.gitignore');
 };
