@@ -16,6 +16,7 @@ var WebappAssetgraphGenerator = module.exports = function WebappAssetgraphGenera
 
 util.inherits(WebappAssetgraphGenerator, yeoman.generators.Base);
 
+/*
 WebappAssetgraphGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
@@ -30,10 +31,15 @@ WebappAssetgraphGenerator.prototype.askFor = function askFor() {
   }];
 
   this.prompt(prompts, function (props) {
-    this.someOption = props.someOption;
+    //this.someOption = props.someOption;
 
     cb();
   }.bind(this));
+};
+*/
+
+WebappAssetgraphGenerator.prototype.gruntfile = function gruntfile() {
+  this.template('Gruntfile.js');
 };
 
 WebappAssetgraphGenerator.prototype.app = function app() {
