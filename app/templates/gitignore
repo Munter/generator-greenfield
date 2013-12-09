@@ -1,4 +1,4 @@
 node_modules
-app/**/*-generated
+app/bower_components
 app/**/*/vendor
 dist

@@ -55,5 +55,17 @@ WebappAssetgraphGenerator.prototype.app = function app() {
 WebappAssetgraphGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
+  this.copy('bowerrc', '.bowerrc');
   this.copy('gitignore', '.gitignore');
+};
+
+WebappAssetgraphGenerator.prototype.html5bp = function projectfiles() {
+  this.copy('app/index.html', 'app/index.html');
+  this.copy('app/404.html', 'app/404.html');
+  this.copy('app/favicon.ico', 'app/favicon.ico');
+  this.copy('app/robots.txt', 'app/robots.txt');
+  this.copy('app/.htaccess', 'app/.htaccess');
+
+  this.copy('app/styles/main.css', 'app/styles/main.css');
+  this.copy('app/scripts/main.js', 'app/scripts/main.js');
 };
