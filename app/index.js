@@ -60,7 +60,6 @@ WebappAssetgraphGenerator.prototype.projectfiles = function projectfiles() {
 };
 
 WebappAssetgraphGenerator.prototype.html5bp = function projectfiles() {
-  this.copy('app/index.html', 'app/index.html');
   this.copy('app/404.html', 'app/404.html');
   this.copy('app/favicon.ico', 'app/favicon.ico');
   this.copy('app/robots.txt', 'app/robots.txt');
@@ -68,4 +67,11 @@ WebappAssetgraphGenerator.prototype.html5bp = function projectfiles() {
 
   this.copy('app/styles/main.css', 'app/styles/main.css');
   this.copy('app/scripts/main.js', 'app/scripts/main.js');
+};
+
+WebappAssetgraphGenerator.prototype.writeIndex = function writeIndex() {
+  this.indexFile = this.readFileAsString(path.join(this.sourceRoot(), 'app/index.html'));
+  this.indexFile = this.engine(this.indexFile, this);
+
+  this.write('app/index.html', this.indexFile);
 };
