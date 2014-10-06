@@ -126,8 +126,20 @@ module.exports = function (grunt) {
                 '*.ico'
             ],
 
-            // Compile less files and remove less.js from application
+            // Browser support configuration to send to autoprefixer and other transforms.
+            // Browser support syntax documentation: https://github.com/ai/autoprefixer#browsers
+            browsers: [
+                '> 1%',
+                'last 2 versions',
+                'Firefox ESR',
+                'Opera 12.1'
+            ],
+
+            // Compile less files
             less: true,
+
+            // Compile scss files
+            scss: true,
 
             // Run all available jpeg and png optimizations on images
             // For maximum efficiency install jpegtran, optipng, pngcrush and pngquant
