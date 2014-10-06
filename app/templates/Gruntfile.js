@@ -21,7 +21,6 @@ module.exports = function (grunt) {
         // Project settings
         yeoman: {
             // Configurable paths
-            src: 'src',
             app: 'app',
             dist: 'dist',
             test: 'test'
