@@ -65,7 +65,7 @@ module.exports = function (grunt) {
             proxy: null,
 
             // Compile React Jsx to JavaScript
-            jsx: true,
+            jsx: false,
 
             // Compile Less to CSS
             less: true,
