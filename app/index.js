@@ -55,6 +55,7 @@ WebappAssetgraphGenerator.prototype.app = function app() {
 WebappAssetgraphGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('editorconfig', '.editorconfig');
   this.copy('jshintrc', '.jshintrc');
+  this.copy('jshintignore', '.jshintignore');
   this.copy('bowerrc', '.bowerrc');
   this.copy('gitignore', '.gitignore');
 };
