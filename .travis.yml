@@ -6,3 +6,6 @@ before_install:
   - currentfolder=${PWD##*/}
   - if [ "$currentfolder" != 'generator-webapp-assetgraph' ]; then cd .. && eval "mv $currentfolder generator-webapp-assetgraph" && cd generator-webapp-assetgraph; fi
 
+script: "npm run-script travis"
+
+#after_success: "<coverage/lcov.info ./node_modules/coveralls/bin/coveralls.js"
