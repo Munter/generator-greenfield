@@ -18,7 +18,9 @@
     "url": "git://github.com/Munter/generator-webapp-assetgraph.git"
   },
   "scripts": {
-    "test": "mocha"
+    "lint": "jshint .",
+    "test": "npm run jshint && mocha",
+    "travis": "npm test"
   },
   "dependencies": {
     "yeoman-generator": "^0.17.7"
