@@ -161,6 +161,10 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.registerTask('lint', [
+        'newer:jshint'
+    ]);
+
     grunt.registerTask('serve', [
         'livestyle'
     ]);
