@@ -5,74 +5,74 @@ var yeoman = require('yeoman-generator');
 
 
 var WebappAssetgraphGenerator = module.exports = function WebappAssetgraphGenerator(args, options, config) {
-  yeoman.generators.Base.apply(this, arguments);
+    yeoman.generators.Base.apply(this, arguments);
 
-  this.on('end', function () {
-    this.installDependencies({ skipInstall: options['skip-install'] });
-  });
+    this.on('end', function () {
+        this.installDependencies({ skipInstall: options['skip-install'] });
+    });
 
-  this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+    this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
 };
 
 util.inherits(WebappAssetgraphGenerator, yeoman.generators.Base);
 
 /*
 WebappAssetgraphGenerator.prototype.askFor = function askFor() {
-  var cb = this.async();
+    var cb = this.async();
 
-  // have Yeoman greet the user.
-  console.log(this.yeoman);
+    // have Yeoman greet the user.
+    console.log(this.yeoman);
 
-  var prompts = [{
-    type: 'confirm',
-    name: 'someOption',
-    message: 'Would you like to enable this option?',
-    default: true
-  }];
+    var prompts = [{
+        type: 'confirm',
+        name: 'someOption',
+        message: 'Would you like to enable this option?',
+        default: true
+    }];
 
-  this.prompt(prompts, function (props) {
-    //this.someOption = props.someOption;
+    this.prompt(prompts, function (props) {
+        //this.someOption = props.someOption;
 
-    cb();
-  }.bind(this));
+        cb();
+    }.bind(this));
 };
 */
 
 WebappAssetgraphGenerator.prototype.gruntfile = function gruntfile() {
-  this.template('Gruntfile.js');
+    this.template('Gruntfile.js');
 };
 
 WebappAssetgraphGenerator.prototype.app = function app() {
-  this.mkdir('app');
-  this.mkdir('app/styles');
-  this.mkdir('app/scripts');
-  this.mkdir('app/images');
+    this.mkdir('app');
+    this.mkdir('app/styles');
+    this.mkdir('app/scripts');
+    this.mkdir('app/images');
 
-  this.copy('_package.json', 'package.json');
-  this.copy('_bower.json', 'bower.json');
+    this.copy('_package.json', 'package.json');
+    this.copy('_bower.json', 'bower.json');
 };
 
 WebappAssetgraphGenerator.prototype.projectfiles = function projectfiles() {
-  this.copy('editorconfig', '.editorconfig');
-  this.copy('jshintrc', '.jshintrc');
-  this.copy('jshintignore', '.jshintignore');
-  this.copy('bowerrc', '.bowerrc');
-  this.copy('gitignore', '.gitignore');
+    this.copy('editorconfig', '.editorconfig');
+    this.copy('jshintrc', '.jshintrc');
+    this.copy('jshintignore', '.jshintignore');
+    this.copy('bowerrc', '.bowerrc');
+    this.copy('gitignore', '.gitignore');
 };
 
 WebappAssetgraphGenerator.prototype.html5bp = function projectfiles() {
-  this.copy('app/404.html', 'app/404.html');
-  this.copy('app/favicon.ico', 'app/favicon.ico');
-  this.copy('app/robots.txt', 'app/robots.txt');
-  this.copy('app/.htaccess', 'app/.htaccess');
+    this.copy('app/404.html', 'app/404.html');
+    this.copy('app/favicon.ico', 'app/favicon.ico');
+    this.copy('app/robots.txt', 'app/robots.txt');
+    this.copy('app/.htaccess', 'app/.htaccess');
 
-  this.copy('app/styles/main.css', 'app/styles/main.css');
-  this.copy('app/scripts/main.js', 'app/scripts/main.js');
+    this.copy('app/styles/main.css', 'app/styles/main.css');
+    this.copy('app/scripts/main.js', 'app/scripts/main.js');
 };
 
 WebappAssetgraphGenerator.prototype.writeIndex = function writeIndex() {
-  this.indexFile = this.readFileAsString(path.join(this.sourceRoot(), 'app/index.html'));
-  this.indexFile = this.engine(this.indexFile, this);
+    this.indexFile = this.readFileAsString(path.join(this.sourceRoot(), 'app/index.html'));
+    this.indexFile = this.engine(this.indexFile, this);
 
-  this.write('app/index.html', this.indexFile);
+    this.write('app/index.html', this.indexFile);
 };
