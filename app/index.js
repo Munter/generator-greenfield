@@ -16,27 +16,32 @@ var WebappAssetgraphGenerator = module.exports = function WebappAssetgraphGenera
 
 util.inherits(WebappAssetgraphGenerator, yeoman.generators.Base);
 
-/*
+
 WebappAssetgraphGenerator.prototype.askFor = function askFor() {
     var cb = this.async();
 
     // have Yeoman greet the user.
-    console.log(this.yeoman);
+    //console.log(this.yeoman);
 
     var prompts = [{
-        type: 'confirm',
-        name: 'someOption',
-        message: 'Would you like to enable this option?',
+        type: 'list',
+        name: 'CSS',
+        message: 'What flavor CSS do you like??',
+        choices: [
+            'CSS',
+            'Scss',
+            'Less'
+        ],
         default: true
     }];
 
     this.prompt(prompts, function (props) {
-        //this.someOption = props.someOption;
+        this.cssPreProcessor = props.CSS;
 
         cb();
     }.bind(this));
 };
-*/
+
 
 WebappAssetgraphGenerator.prototype.gruntfile = function gruntfile() {
     this.template('Gruntfile.js');
@@ -48,7 +53,7 @@ WebappAssetgraphGenerator.prototype.app = function app() {
     this.mkdir('app/scripts');
     this.mkdir('app/images');
 
-    this.copy('_package.json', 'package.json');
+    this.template('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
 };
 
@@ -66,7 +71,16 @@ WebappAssetgraphGenerator.prototype.html5bp = function projectfiles() {
     this.copy('app/robots.txt', 'app/robots.txt');
     this.copy('app/.htaccess', 'app/.htaccess');
 
-    this.copy('app/styles/main.css', 'app/styles/main.css');
+    switch (this.cssPreProcessor) {
+    case 'Scss':
+        this.copy('app/styles/main.css', 'app/styles/main.scss');
+        break;
+    case 'Less':
+        this.copy('app/styles/main.css', 'app/styles/main.less');
+        break;
+    default:
+        this.copy('app/styles/main.css', 'app/styles/main.css');
+    }
     this.copy('app/scripts/main.js', 'app/scripts/main.js');
 };
 
