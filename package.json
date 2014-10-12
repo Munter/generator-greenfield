@@ -1,7 +1,7 @@
 {
   "name": "generator-greenfield",
   "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "description": "A full and clean frontend web workflow Yeoman generator. Simple configuration, powerful preprocessing and image pipeline, livereload and a highly optimized production build output",
   "keywords": [
     "yeoman-generator"
   ],
