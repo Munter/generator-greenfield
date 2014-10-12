@@ -2,16 +2,52 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var yosay = require('yosay');
+var chalk = require('chalk');
 
 
 var GreenfieldGenerator = module.exports = function GreenfieldGenerator(args, options, config) {
     yeoman.generators.Base.apply(this, arguments);
 
     this.on('end', function () {
-        this.installDependencies({ skipInstall: options['skip-install'] });
+        this.installDependencies({
+            skipInstall: options['skip-install'],
+            callback: function () {
+                try {
+                    require('grunt-reduce/node_modules/assetgraph-builder/node_modules/histogram');
+                } catch (e) {
+                    var os = require('os');
+                    var EOL = os.EOL;
+                    var command = 'Run: _';
+                    var platformCommand = '';
+                    var then = 'rm -rf node_modules/grunt-reduce && npm install';
+
+                    if (process.platform === 'linux') {
+                        platformCommand = 'sudo apt-get install -y libcairo2-dev libjpeg8-dev libgif-dev';
+                    } else if (process.platform === 'darwin') {
+                        platformCommand = 'brew install cairo jpeg giflib';
+                    }
+
+                    if (process.platform.indexOf('win') === 0) {
+                        command = 'Visit ' + chalk.cyan('https://github.com/Automattic/node-canvas/wiki/Installation---Windows') + ' for installation instructions';
+                    } else {
+                        command = command.replace('_', chalk.cyan(platformCommand));
+                    }
+
+                    console.log(yosay(
+                        chalk.yellow('UH OH!') + ' Looks like the installation of canvas failed.' + EOL +
+                        'Canvas is used for image optimization and spriting.'
+                    ));
+
+                    console.log('To fix this problem: ' + command + ', then ' + chalk.cyan(then));
+                }
+            }
+        });
+
     });
 
     this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+
 };
 
 util.inherits(GreenfieldGenerator, yeoman.generators.Base);
