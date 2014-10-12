@@ -3,7 +3,15 @@
   "version": "0.0.0",
   "description": "A full and clean frontend web workflow Yeoman generator. Simple configuration, powerful preprocessing and image pipeline, livereload and a highly optimized production build output",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "web",
+    "app",
+    "front-end",
+    "h5bp",
+    "grunt",
+    "assetgraph",
+    "livereload",
+    "imagepipeline"
   ],
   "homepage": "https://github.com/Munter/generator-greenfield",
   "bugs": "https://github.com/Munter/generator-greenfield/issues",
