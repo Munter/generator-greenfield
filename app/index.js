@@ -107,16 +107,19 @@ GreenfieldGenerator.prototype.html5bp = function projectfiles() {
     this.copy('app/robots.txt', 'app/robots.txt');
     this.copy('app/.htaccess', 'app/.htaccess');
 
+    var cssExtension;
     switch (this.cssPreProcessor) {
     case 'Scss':
-        this.copy('app/styles/main.css', 'app/styles/main.scss');
+        cssExtension = 'scss';
         break;
     case 'Less':
-        this.copy('app/styles/main.css', 'app/styles/main.less');
+        cssExtension = 'less';
         break;
     default:
-        this.copy('app/styles/main.css', 'app/styles/main.css');
+        cssExtension = 'css';
     }
+    this.copy('app/styles/main.css', 'app/styles/main.' + cssExtension);
+
     this.copy('app/scripts/main.js', 'app/scripts/main.js');
 };
 
