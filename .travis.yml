@@ -3,7 +3,7 @@ node_js:
   - '0.10'
 before_install:
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-webapp-assetgraph' ]; then cd .. && eval "mv $currentfolder generator-webapp-assetgraph" && cd generator-webapp-assetgraph; fi
+  - if [ "$currentfolder" != 'generator-greenfield' ]; then cd .. && eval "mv $currentfolder generator-greenfield" && cd generator-greenfield; fi
 
 script: "npm run-script travis"
 

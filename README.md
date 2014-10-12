@@ -1,11 +1,11 @@
-generator-webapp-assetgraph
+generator-greenfield
 ===========================
 
-[![NPM version](https://badge.fury.io/js/generator-webapp-assetgraph.png)](http://badge.fury.io/js/generator-webapp-assetgraph)
-[![Build Status](https://travis-ci.org/Munter/generator-webapp-assetgraph.png?branch=master)](https://travis-ci.org/Munter/generator-webapp-assetgraph)
-[![Coverage Status](https://coveralls.io/repos/Munter/generator-webapp-assetgraph/badge.png)](https://coveralls.io/r/Munter/generator-webapp-assetgraph)
-[![Dependency Status](https://david-dm.org/Munter/generator-webapp-assetgraph.png)](https://david-dm.org/Munter/generator-webapp-assetgraph)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Munter/generator-webapp-assetgraph/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![NPM version](https://badge.fury.io/js/generator-greenfield.png)](http://badge.fury.io/js/generator-greenfield)
+[![Build Status](https://travis-ci.org/Munter/generator-greenfield.png?branch=master)](https://travis-ci.org/Munter/generator-greenfield)
+[![Coverage Status](https://coveralls.io/repos/Munter/generator-greenfield/badge.png)](https://coveralls.io/r/Munter/generator-greenfield)
+[![Dependency Status](https://david-dm.org/Munter/generator-greenfield.png)](https://david-dm.org/Munter/generator-greenfield)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Munter/generator-greenfield/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 This [Yeoman](http://yeoman.io) generator gives you a full web application development iteration workflow setup, a high quality web performance optimized build output and a very low configuration footprint.
 
@@ -33,16 +33,16 @@ Or on OS X, with [homebrew](http://brew.sh/):
 brew install cairo jpeg giflib optipng pngcrush pngquant pango graphicsmagick jpeg-turbo inkscape
 ```
 
-To install generator-webapp-assetgraph from npm, run:
+To install generator-greenfield from npm, run:
 
 ```
-npm install -g generator-webapp-assetgraph
+npm install -g generator-greenfield
 ```
 
 Finally, initiate the generator:
 
 ```
-yo webapp-assetgraph
+yo greenfield
 ```
 
 Caching strategy

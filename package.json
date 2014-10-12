@@ -1,12 +1,12 @@
 {
-  "name": "generator-webapp-assetgraph",
+  "name": "generator-greenfield",
   "version": "0.0.0",
   "description": "A generator for Yeoman",
   "keywords": [
     "yeoman-generator"
   ],
-  "homepage": "https://github.com/Munter/generator-webapp-assetgraph",
-  "bugs": "https://github.com/Munter/generator-webapp-assetgraph/issues",
+  "homepage": "https://github.com/Munter/generator-greenfield",
+  "bugs": "https://github.com/Munter/generator-greenfield/issues",
   "author": {
     "name": "Peter Müller",
     "email": "munter@fumle.dk",
@@ -15,7 +15,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Munter/generator-webapp-assetgraph.git"
+    "url": "git://github.com/Munter/generator-greenfield.git"
   },
   "scripts": {
     "lint": "jshint .",
