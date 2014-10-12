@@ -76,6 +76,7 @@ GreenfieldGenerator.prototype.askFor = function askFor() {
 
     this.prompt(prompts, function (props) {
         this.cssPreProcessor = props.CSS;
+        this.cssExtension = this.cssPreProcessor.toLowerCase();
 
         cb();
     }.bind(this));
@@ -110,18 +111,7 @@ GreenfieldGenerator.prototype.html5bp = function projectfiles() {
     this.copy('app/robots.txt', 'app/robots.txt');
     this.copy('app/.htaccess', 'app/.htaccess');
 
-    var cssExtension;
-    switch (this.cssPreProcessor) {
-    case 'Scss':
-        cssExtension = 'scss';
-        break;
-    case 'Less':
-        cssExtension = 'less';
-        break;
-    default:
-        cssExtension = 'css';
-    }
-    this.copy('app/styles/main.css', 'app/styles/main.' + cssExtension);
+    this.copy('app/styles/main.css', 'app/styles/main.' + this.cssExtension);
 
     this.copy('app/scripts/main.js', 'app/scripts/main.js');
 };

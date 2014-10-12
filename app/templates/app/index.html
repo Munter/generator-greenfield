@@ -11,9 +11,7 @@
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <% if (cssPreProcessor === 'Scss') { %><link rel="stylesheet" href="styles/main.scss"><% } %>
-        <% if (cssPreProcessor === 'Less') { %><link rel="stylesheet" href="styles/main.less"><% } %>
-        <% if (cssPreProcessor === 'Css') { %><link rel="stylesheet" href="styles/main.css"><% } %>
+        <link rel="stylesheet" href="styles/main.<%- cssExtension %>">
     </head>
     <body>
         <!--[if lt IE 10]>
