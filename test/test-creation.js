@@ -3,6 +3,7 @@
 
 var path    = require('path');
 var helpers = require('yeoman-generator').test;
+var assert = require('yeoman-generator').assert;
 
 
 describe('greenfield generator', function () {
@@ -21,9 +22,13 @@ describe('greenfield generator', function () {
 
     it('creates expected files', function (done) {
         var expected = [
-            // add files you expect to exist here.
             '.jshintrc',
-            '.editorconfig'
+            '.jshintignore',
+            '.bowerrc',
+            '.editorconfig',
+            'package.json',
+            'bower.json',
+            'Gruntfile.js'
         ];
 
         helpers.mockPrompt(this.app, {
@@ -31,7 +36,7 @@ describe('greenfield generator', function () {
         });
         this.app.options['skip-install'] = true;
         this.app.run({}, function () {
-            helpers.assertFiles(expected);
+            assert.file(expected);
             done();
         });
     });

@@ -71,7 +71,7 @@ GreenfieldGenerator.prototype.askFor = function askFor() {
             'Scss',
             'Less'
         ],
-        default: true
+        default: 'CSS'
     }];
 
     this.prompt(prompts, function (props) {
