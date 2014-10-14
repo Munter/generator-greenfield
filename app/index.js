@@ -13,7 +13,7 @@ function checkForCanvasError() {
         var EOL = os.EOL;
         var command = 'Run: _';
         var platformCommand = '';
-        var then = 'rm -rf node_modules/grunt-reduce && npm install';
+        var then = 'npm install -f grunt-reduce';
 
         if (process.platform === 'linux') {
             platformCommand = 'sudo apt-get install -y libcairo2-dev libjpeg8-dev libgif-dev';
