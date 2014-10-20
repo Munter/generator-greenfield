@@ -50,7 +50,25 @@ Caching strategy
 
 The production build that ends up in `dist` uses md5-hash file renaming for all static assets like CSS, JavaScript and Images. All of these are placed in `dist/static/`. Since the file name contains the hash of the files content, the file name will change whenever the content changes. This leaves you free to set a far future cache expiry on all assets in `/static`. It is highly recommended that you set your production server up to do this. The fastest HTTP request is the one that never has to be made.
 
-**TODO:** Apache, Nginx and Express example configurations
+**Apache config**
+
+``` htaccess
+#Expire Header
+<FilesMatch "/static/.+\.[0-9a-f]{10}\.">
+  ExpiresDefault "access plus 1 year"
+</FilesMatch>
+```
+
+**Nginx config**
+
+
+``` nginx
+server {
+  location ~* /static/.+\.[0-9a-f]{10}\. {
+    expires max;
+  }
+}
+```
 
 
 The image pipeline
