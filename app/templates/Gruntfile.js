@@ -1,29 +1,24 @@
 // Generated on <%= (new Date).toISOString().split('T')[0] %> using <%= pkg.name %> <%= pkg.version %>
 'use strict';
 
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
-
 module.exports = function (grunt) {
+    require('jit-grunt')(grunt); // Load grunt tasks automatically
+    require('time-grunt')(grunt); // Time how long tasks take. Can help when optimizing build times
 
-    // Load grunt tasks automatically
-    require('jit-grunt')(grunt);
-
-    // Time how long tasks take. Can help when optimizing build times
-    require('time-grunt')(grunt);
-
-    // Define the configuration for all the tasks
     grunt.initConfig({
-
-        // Project settings
         yeoman: {
-            // Configurable paths
             app: 'app',
             dist: 'dist',
-            test: 'test'
+            test: 'test',
+
+            // Browser support, used for autoprefixing and backwards compatible hack enabling
+            // Syntax documentation: https://github.com/ai/autoprefixer#browsers
+            browsers: [
+                '> 1%',
+                'last 2 versions',
+                'Firefox ESR',
+                'Opera 12.1'
+            ]
         },
 
         // Empties folders to start fresh
@@ -51,69 +46,17 @@ module.exports = function (grunt) {
             ]
         },
 
-        'livestyle': {
-            // The root of your web application
-            root: 'app',
-
-            // The port that the web server will listen on
-            port: 9000,
-
-            // The fallback web server to proxy requests to in case of missing files
-            // Very useful if you are working with a remote API or a backend that generates dynamic html
-            // The value should be a valid url to the server you want to proxy to
-            proxy: null,
-
-            // Compile React Jsx to JavaScript
-            jsx: false,
-
-            // Compile Less to CSS
-            less: true,
-
-            // Compile Scss to CSS using node-sass
-            scss: true,
-
-            // Watch HTML-files and livereload on changes
-            html: true,
-
-            // Watch CSS bakground images and livereload on changes
-            cssImages: true,
-
-            // Run each image through the image processing pipeline exposed by express-processimage
-            // Allows you to resize, recompress, change image format, rasterize SVG and much more
-            // Reading the documentation is highly recommended: https://github.com/papandreou/express-processimage#express-processimage
-            processimage: true,
-
-            // Enable debug logging. VERY chatty!
-            debug: false,
-
-            // Translate the paths of incoming requests.
-            // Think of it as a very primitive mod_rewrite that only works on request path prefixes.
-            // For example, to translate all requests for /remoteDir/* to /localDir/* do this:
-            // {
-            //    '/remoteDir/': '/localDir/'
-            // }
-            //
-            mappings: {},
-
-            // Browser version configuration
-            // This is used for autoprefixing, but may in the future also be used to browser version specific hacks
-            browsers: [
-                '> 1%',
-                'last 2 versions',
-                'Firefox ESR',
-                'Opera 12.1'
-            ]
+        // Development server configuration, see https://github.com/Munter/grunt-livestyle#full-configuration-example
+        livestyle: {
+            root: '<%%= yeoman.app %>',
+            browsers: '<%%= yeoman.browsers %>'
         },
 
+        // Production build system configuration, see https://github.com/Munter/grunt-reduce#configuration
         reduce: {
-            // Source folder
             root: '<%%= yeoman.app %>',
-
-            // Build destination folder
             outRoot: '<%%= yeoman.dist %>',
-
-            // Root of your CDN. Optional
-            //cdnRoot: 'https://my.amazon.s3.bucket',
+            browsers: '<%%= yeoman.browsers %>',
 
             // minimatch patterns of files to include as base assets
             // Dependencies of these will be automatically populated
@@ -123,41 +66,7 @@ module.exports = function (grunt) {
                 '**/.htaccess',
                 '*.txt',
                 '*.ico'
-            ],
-
-            // Browser support configuration to send to autoprefixer and other transforms.
-            // Browser support syntax documentation: https://github.com/ai/autoprefixer#browsers
-            browsers: [
-                '> 1%',
-                'last 2 versions',
-                'Firefox ESR',
-                'Opera 12.1'
-            ],
-
-            // Compile less files
-            less: true,
-
-            // Compile scss files
-            scss: true,
-
-            // Run all available jpeg and png optimizations on images
-            // For maximum efficiency install jpegtran, optipng, pngcrush and pngquant
-            optimizeImages: true,
-
-            // Create a cache manifest file
-            // If one already exists it will be ammended with static assets
-            manifest: false,
-
-            // Set the 'async'-attribute on all script tags
-            asyncScripts: true,
-
-            // Pretty print assets. Good for debugging
-            pretty: false, // Default: false
-
-            // Inline CSS backgrounds below this byte threshold as data-uris
-            // There will be an old IE fallback to the original image
-            // 0 disables.
-            inlineSize: 4096
+            ]
         }
     });
 
@@ -167,6 +76,10 @@ module.exports = function (grunt) {
 
     grunt.registerTask('serve', [
         'livestyle'
+    ]);
+
+    grunt.registerTask('test', [
+        'jshint'
     ]);
 
     grunt.registerTask('build', [
