@@ -2,14 +2,14 @@
   "name": "<%= _.slugify(appname) %>",
   "version": "0.0.0",
   "devDependencies": {
-    <% if (cssPreProcessor === 'Scss') { %>"node-sass": "^0.9.6",<% } %>
-    <% if (cssPreProcessor === 'Less') { %>"less": "^1.7.5",<% } %>
+    <% if (cssPreProcessor === 'Scss') { %>"node-sass": "^1.2.2",<% } %>
+    <% if (cssPreProcessor === 'Less') { %>"less": "^2.0.0",<% } %>
     "autoprefixer": "^3.1.0",
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-jshint": "^0.10.0",
-    "grunt-livestyle": "^1.1.1",
-    "grunt-newer": "^0.7.0",
+    "grunt-livestyle": "^1.2.0",
+    "grunt-newer": "^0.8.0",
     "grunt-reduce": "^1.1.1",
     "jit-grunt": "^0.8.0",
     "jshint-stylish": "^1.0.0",
