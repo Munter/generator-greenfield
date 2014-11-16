@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "devDependencies": {
     <% if (cssPreProcessor === 'Scss') { %>"node-sass": "1.0.3",<% } %>
-    <% if (cssPreProcessor === 'Less') { %>"less": "^2.0.0",<% } %>
-    "autoprefixer": "^3.1.0",
+    <% if (cssPreProcessor === 'Less') { %>"less": "^1.7.5",<% } %>
+    "autoprefixer": "^3.2.0",
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-jshint": "^0.10.0",
