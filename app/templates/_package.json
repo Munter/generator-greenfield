@@ -2,7 +2,7 @@
   "name": "<%= _.slugify(appname) %>",
   "version": "0.0.0",
   "devDependencies": {
-    <% if (cssPreProcessor === 'Scss') { %>"node-sass": "^1.2.2",<% } %>
+    <% if (cssPreProcessor === 'Scss') { %>"node-sass": "1.0.3",<% } %>
     <% if (cssPreProcessor === 'Less') { %>"less": "^2.0.0",<% } %>
     "autoprefixer": "^3.1.0",
     "grunt": "^0.4.5",
