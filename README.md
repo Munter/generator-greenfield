@@ -13,7 +13,7 @@ The development workflow uses the [Livestyle](https://github.com/One-com/livesty
 
 The basic principles behind the development workflow is that any temporary build artifact, like the resulting CSS from your Sass, is not of any value to you on disk. It only has value in the browser, where you need to consume it. So we keep the file system clean by doing transformations in the HTTP stream. This reduces your need for configuration considerably. No extra gitignores, no double file watching, no `.tmp`-directory, no copying around files in development. Instead, leverage the power of the URL. Point directly at your Sass files form HTML or a RequireJS CSS plugin. It's that simple. Run `grunt serve` to start the server, then edit the files in `app`, and you're half way there!
 
-The production deployment build flow is also quite simple. It automatically figures out what files you are using in your app, based on the source code. It understands the same tricks at the development flow, compiles your Sass and Less, optimizes your images, bundles and compresses your CSS and JavaScript and so forth. The production build does not run automatically on every file change in your `app` folder. Rather than spending time rebuilding constantly, this setup focuses on development iteration speed. You should run a production build with `grunt build` when you are ready to deploy. When you do, you will find your optimized webapp in `dist`. This is the folder you should deploy to your production server.
+The production deployment build flow is also quite simple. It automatically figures out what files you are using in your app, based on the source code. It understands the same tricks as the development flow, compiles your Sass and Less, optimizes your images, bundles and compresses your CSS and JavaScript and so forth. The production build does not run automatically on every file change in your `app` folder. Rather than spending time rebuilding constantly, this setup focuses on development iteration speed. You should run a production build with `grunt build` when you are ready to deploy. When you do, you will find your optimized webapp in `dist`. This is the folder you should deploy to your production server.
 
 
 Installation
@@ -24,7 +24,7 @@ This generator packs quite a punch. However, some of this very powerful function
 On Ubuntu you can grab them all by running:
 
 ```
-sudo apt-get install -y libcairo2-dev libjpeg8-dev libgif-dev optipng pngcrush pngquant libpango1.0-dev graphicsmagick libjpeg-turbo-progs inkscape
+sudo apt-get install -y libcairo2-dev libjpeg8-dev libgif-dev optipng pngcrush pngquant libpango1.0-dev graphicsmagick libjpeg-progs inkscape
 ```
 
 Or on OS X, with [homebrew](http://brew.sh/):
