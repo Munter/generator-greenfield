@@ -10,7 +10,7 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-livestyle": "^1.4.0",
     "grunt-newer": "^0.8.0",
-    "grunt-reduce": "^1.2.0",
+    "grunt-reduce": "^1.3.0",
     "jit-grunt": "^0.8.0",
     "jshint-stylish": "^1.0.0",
     "time-grunt": "^1.0.0"
