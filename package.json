@@ -1,6 +1,6 @@
 {
   "name": "generator-greenfield",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "A full and clean frontend web workflow Yeoman generator. Simple configuration, powerful preprocessing and image pipeline, livereload and a highly optimized production build output",
   "keywords": [
     "yeoman-generator",
