@@ -1,10 +1,10 @@
 generator-greenfield
 ===========================
 
-[![NPM version](https://badge.fury.io/js/generator-greenfield.png)](http://badge.fury.io/js/generator-greenfield)
-[![Build Status](https://travis-ci.org/Munter/generator-greenfield.png?branch=master)](https://travis-ci.org/Munter/generator-greenfield)
-[![Coverage Status](https://coveralls.io/repos/Munter/generator-greenfield/badge.png)](https://coveralls.io/r/Munter/generator-greenfield)
-[![Dependency Status](https://david-dm.org/Munter/generator-greenfield.png)](https://david-dm.org/Munter/generator-greenfield)
+[![NPM version](https://badge.fury.io/js/generator-greenfield.svg)](http://badge.fury.io/js/generator-greenfield)
+[![Build Status](https://travis-ci.org/Munter/generator-greenfield.svg?branch=master)](https://travis-ci.org/Munter/generator-greenfield)
+[![Coverage Status](https://coveralls.io/repos/Munter/generator-greenfield/badge.svg)](https://coveralls.io/r/Munter/generator-greenfield)
+[![Dependency Status](https://david-dm.org/Munter/generator-greenfield.svg)](https://david-dm.org/Munter/generator-greenfield)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Munter/generator-greenfield/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 This [Yeoman](http://yeoman.io) generator gives you a full web application development iteration workflow setup, a high quality web performance optimized build output and a very low configuration footprint.
