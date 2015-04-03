@@ -2,17 +2,17 @@
   "name": "<%= _.slugify(appname) %>",
   "version": "0.0.0",
   "devDependencies": {
-    <% if (cssPreProcessor === 'Scss') { %>"node-sass": "1.0.3",<% } %>
-    <% if (cssPreProcessor === 'Less') { %>"less": "^1.7.5",<% } %>
-    "autoprefixer": "^3.1.0",
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-livestyle": "^1.4.0",
-    "grunt-newer": "^0.8.0",
-    "grunt-reduce": "^1.4.0",
-    "jit-grunt": "^0.8.0",
-    "jshint-stylish": "^1.0.0",
-    "time-grunt": "^1.0.0"
+    <% if (cssPreProcessor === 'Scss') { %>"node-sass": "*",<% } %>
+    <% if (cssPreProcessor === 'Less') { %>"less": "*",<% } %>
+    "autoprefixer": "*",
+    "grunt": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-livestyle": "*",
+    "grunt-newer": "*",
+    "grunt-reduce": "*",
+    "jit-grunt": "*",
+    "jshint-stylish": "*",
+    "time-grunt": "*"
   }
 }
