@@ -31,9 +31,9 @@
     "travis": "npm test"
   },
   "dependencies": {
-    "chalk": "^0.5.1",
-    "yeoman-generator": "=0.17.0",
-    "yosay": "^1.0.0"
+    "chalk": "^1.0.0",
+    "yeoman-generator": "^0.18.10",
+    "yosay": "^1.0.3"
   },
   "devDependencies": {
     "jshint": "^2.6.3",
