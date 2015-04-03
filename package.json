@@ -36,6 +36,7 @@
     "yosay": "^1.0.0"
   },
   "devDependencies": {
+    "jshint": "^2.6.3",
     "mocha": "^1.21.4"
   },
   "peerDependencies": {
