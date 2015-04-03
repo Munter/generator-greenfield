@@ -27,12 +27,12 @@
   },
   "scripts": {
     "lint": "jshint .",
-    "test": "npm run jshint && mocha",
+    "test": "npm run lint && mocha",
     "travis": "npm test"
   },
   "dependencies": {
     "chalk": "^1.0.0",
-    "yeoman-generator": "^0.18.10",
+    "yeoman-generator": "=0.17.7",
     "yosay": "^1.0.3"
   },
   "devDependencies": {

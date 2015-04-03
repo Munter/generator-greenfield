@@ -1,14 +1,17 @@
 'use strict';
 var util = require('util');
 var path = require('path');
+var fs = require('fs');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
 
 function checkForCanvasError() {
-    try {
-        require('grunt-reduce/node_modules/assetgraph-builder/node_modules/histogram');
-    } catch (e) {
+    fs.stat('node_modules/grunt-reduce/node_modules/assetgraph-builder/node_modules/histogram', function (err, stat) {
+        if (!err) {
+            return;
+        }
+
         var os = require('os');
         var EOL = os.EOL;
         var command = 'Run: _';
@@ -16,9 +19,9 @@ function checkForCanvasError() {
         var then = 'npm install -f grunt-reduce';
 
         if (process.platform === 'linux') {
-            platformCommand = 'sudo apt-get install -y libcairo2-dev libjpeg8-dev libgif-dev';
+            platformCommand = 'sudo apt-get install -y libcairo2-dev libjpeg8-dev libgif-dev libpango1.0-dev';
         } else if (process.platform === 'darwin') {
-            platformCommand = 'brew install cairo jpeg giflib';
+            platformCommand = 'brew install cairo jpeg giflib pango';
         }
 
         if (process.platform.indexOf('win') === 0) {
@@ -33,7 +36,7 @@ function checkForCanvasError() {
         ));
 
         console.log('To fix this problem: ' + command + ', then ' + chalk.cyan(then));
-    }
+    });
 }
 
 var GreenfieldGenerator = module.exports = function GreenfieldGenerator(args, options, config) {
@@ -41,10 +44,11 @@ var GreenfieldGenerator = module.exports = function GreenfieldGenerator(args, op
 
     this.on('end', function () {
         this.installDependencies({
-            skipInstall: options['skip-install'],
-            callback: function () {
-                checkForCanvasError();
-            }
+            bower: !this.options['skip-install'],
+            npm: !this.options['skip-install'],
+            skipInstall: this.options['skip-install'],
+            skipMessage: !this.options['skip-install'],
+            callback: checkForCanvasError
         });
 
     });

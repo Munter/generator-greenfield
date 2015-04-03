@@ -26,16 +26,16 @@ describe('greenfield generator', function () {
             '.jshintignore',
             '.bowerrc',
             '.editorconfig',
-            'package.json',
+            '.gitignore',
             'bower.json',
-            'Gruntfile.js'
+            'Gruntfile.js',
+            'package.json'
         ];
 
         helpers.mockPrompt(this.app, {
             'someOption': true
         });
-        this.app.options['skip-install'] = true;
-        this.app.run({}, function () {
+        this.app.run(function () {
             assert.file(expected);
             done();
         });
