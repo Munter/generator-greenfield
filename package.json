@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "jshint": "^2.6.3",
-    "mocha": "2.3.4"
+    "mocha": "2.5.3"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
