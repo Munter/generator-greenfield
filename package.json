@@ -33,7 +33,7 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "yeoman-generator": "=0.17.7",
-    "yosay": "^1.0.3"
+    "yosay": "^2.0.0"
   },
   "devDependencies": {
     "jshint": "^2.6.3",
